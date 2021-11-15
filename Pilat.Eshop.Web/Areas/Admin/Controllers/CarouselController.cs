@@ -33,11 +33,15 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CarouselItem carouselItem)
         {
-            if (carouselItem != null && carouselItem.ImageSource != null)
+            if (carouselItem != null && carouselItem.Image != null)
             {
-                /*FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/CarouselItems", "image");
-                carouselItem.ImageSource = await fileUpload.FileUploadAsync(carouselItem.Image);*/
-                if (String.IsNullOrWhiteSpace(carouselItem.ImageSource) == false)
+                FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/ProductItems", "image");
+                carouselItem.ImageSource = await fileUpload.FileUploadAsync(carouselItem.Image);
+
+                ModelState.Clear();
+                TryValidateModel(carouselItem);
+
+                if (ModelState.IsValid)
                 {
                     /*if(eshopDbContext.CarouselItems!=null && eshopDbContext.CarouselItems.Count > 0)
                     {
@@ -45,13 +49,10 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
                     }*/
                     eshopDbContext.CarouselItems.Add(carouselItem);
                     await eshopDbContext.SaveChangesAsync();
-                    return RedirectToAction(nameof(CarouselController.Select));
+                    return RedirectToAction(nameof(ProductController.Select));
                 }
             }
-            /*
-            else
-            {
-            }*/
+
             return View(carouselItem);
         }
         public IActionResult Edit(int ID)
@@ -74,26 +75,33 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
             CarouselItem cifromDb = eshopDbContext.CarouselItems.FirstOrDefault(ci => ci.ID == carouselItem.ID);
             if (cifromDb != null)
             {
-                /*
+
                 if (carouselItem != null && carouselItem.Image != null)
                 {
-                    FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/CarouselItems", "image");
+                    FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/ProductItems", "image");
                     carouselItem.ImageSource = await fileUpload.FileUploadAsync(carouselItem.Image);
 
                     if (String.IsNullOrWhiteSpace(carouselItem.ImageSource) == false)
                     {
+                        cifromDb.ImageAlt = carouselItem.ImageAlt;
                         cifromDb.ImageSource = carouselItem.ImageSource;
                     }
-                }  */
-
-                if (carouselItem != null && carouselItem.ImageSource != null)
+                }
+                else
                 {
-                    cifromDb.ImageSource = carouselItem.ImageSource;
+                    cifromDb.ImageSource = "-";
                 }
 
+                ModelState.Clear();
+                TryValidateModel(carouselItem);
+                if (ModelState.IsValid)
+                {
                     cifromDb.ImageAlt = carouselItem.ImageAlt;
-                await eshopDbContext.SaveChangesAsync();
-                return RedirectToAction(nameof(CarouselController.Select));
+                    cifromDb.ImageSource = carouselItem.ImageSource;
+                    await eshopDbContext.SaveChangesAsync();
+                    return RedirectToAction(nameof(CarouselController.Select));
+                }
+                return NotFound();
             }
             else
             {

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Pilat.Eshop.Web.Models.Validations;
 
 namespace Pilat.Eshop.Web.Models.Entity
 {
@@ -16,6 +17,7 @@ namespace Pilat.Eshop.Web.Models.Entity
         public int ID { get; set; }
 
         [NotMapped]
+        [FileContentValidation("image")]
         public IFormFile Image { get; set; }
 
         [Required]
