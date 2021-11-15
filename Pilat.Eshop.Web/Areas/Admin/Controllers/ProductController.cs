@@ -181,5 +181,34 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
             //return View();
             return RedirectToAction(nameof(CarouselController.Select));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Detail(Product carouselItem)
+        {
+            Product cifromDb = eshopDbContext.Products.FirstOrDefault(ci => ci.ID == carouselItem.ID);
+            if (cifromDb != null)
+            {
+
+                if (carouselItem != null && carouselItem.Image != null)
+                {
+                    FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/ProductItems", "image");
+                    carouselItem.ImageSource = await fileUpload.FileUploadAsync(carouselItem.Image);
+
+                    if (String.IsNullOrWhiteSpace(carouselItem.ImageSource) == false)
+                    {
+                        cifromDb.ImageSource = carouselItem.ImageSource;
+                    }
+                }
+                cifromDb.ImageAlt = carouselItem.ImageAlt;
+                cifromDb.Name = carouselItem.Name;
+                cifromDb.Price = carouselItem.Price;
+                await eshopDbContext.SaveChangesAsync();
+                return RedirectToAction(nameof(CarouselController.Select));
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
