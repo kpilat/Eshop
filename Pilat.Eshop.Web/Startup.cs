@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pilat.Eshop.Web.Models.ApplicationServices.Abstraction;
+using Pilat.Eshop.Web.Models.ApplicationServices.Implementation;
 using Pilat.Eshop.Web.Models.Database;
+using Pilat.Eshop.Web.Models.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +30,38 @@ namespace Pilat.Eshop.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EshopDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySqlConncetionString"), new MySqlServerVersion("8.0.26")));
+            
+            services.AddIdentity<User, Role>()
+                    .AddEntityFrameworkStores<EshopDbContext>()
+                    .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 3;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 2;
+
+                options.Lockout.AllowedForNewUsers = true;
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+
+                options.User.RequireUniqueEmail = true;
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.LoginPath = "/Security/Account/Login";
+                options.LogoutPath = "/Security/Account/Logout";
+                options.SlidingExpiration = true;
+            });
+
+            services.AddScoped<ISecurityApplicationService, SecurityIdentityApplicationService>();
+
             services.AddControllersWithViews();
         }
 
@@ -47,6 +83,7 @@ namespace Pilat.Eshop.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

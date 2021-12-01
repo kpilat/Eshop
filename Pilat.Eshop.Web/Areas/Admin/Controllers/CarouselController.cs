@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 using Pilat.Eshop.Web.Models.Database;
 using Pilat.Eshop.Web.Models.Entity;
 using Pilat.Eshop.Web.Models.Implementation;
+using Microsoft.AspNetCore.Authorization;
+using Pilat.Eshop.Web.Models.Identity;
 
 namespace Pilat.Eshop.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = nameof(Roles.Admin) + ", " + nameof(Roles.Manager))]
     public class CarouselController : Controller
     {
         readonly EshopDbContext eshopDbContext;
