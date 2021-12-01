@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Carousel Items";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>This page shows content of databaseFake</p>
+
+
+<a asp-action="Create">Create new Carousel Item</a>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image Source</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Display Product</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <th scope="row">@Model[i].ID</th>
+                    <td scope="row">@Model[i].Name</td>
+                    <td scope="row">@Model[i].Price</td>
+                    <td scope="row"><img src="@Model[i].ImageSource" style="max-width:32px;" /></td>
+                    <td scope="row"><a asp-action="Edit" asp-route-ID="@Model[i].ID">Edit</a></td>
+                    <td scope="row"><a asp-action="Delete" asp-route-ID="@Model[i].ID" onclick="return ConfirmDelete();">Delete</a></td>
+                    <td scope="row"><a asp-action="Detail" asp-route-ID="@Model[i].ID">Show</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script src="~/js/alerts.js"></script>
+}
