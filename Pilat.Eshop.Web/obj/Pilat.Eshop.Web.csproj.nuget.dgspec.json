@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj": {}
+    "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj": {}
   },
   "projects": {
-    "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj": {
+    "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
+        "projectUniqueName": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
         "projectName": "Pilat.Eshop.Web",
-        "projectPath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
+        "projectPath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
         "packagesPath": "/Users/kristianpilat/.nuget/packages/",
-        "outputPath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/obj/",
+        "outputPath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

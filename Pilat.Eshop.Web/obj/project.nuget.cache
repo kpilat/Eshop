@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YgWJDibabNiDMzLq1DGUY5lvEpug/pM123VJeQZJDaQPWtDeK2OUMleCTcutkFya/M6b0ggD+DCE3x2zcEjXwQ==",
+  "dgSpecHash": "kTMinaYnMp0qq/dt6DPjXNORPdydp+Fp/r5kDtS5TXedIossln24NVQOeK/N/KKaljF0Xi8WejPEnN6TByb+eA==",
   "success": true,
-  "projectFilePath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
+  "projectFilePath": "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Pilat.Eshop.Web.csproj",
   "expectedPackageFiles": [
     "/Users/kristianpilat/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/kristianpilat/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.12/microsoft.aspnetcore.cryptography.internal.5.0.12.nupkg.sha512",

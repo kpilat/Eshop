@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Pilat.Eshop.Web
-build_property.ProjectDir = /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop-master/Pilat.Eshop.Web/
+build_property.ProjectDir = /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/
