@@ -66,9 +66,5 @@ namespace Pilat.Eshop.Web.Areas.Security.Controllers
             await security.Logout();
             return RedirectToAction(nameof(Login));
         }
-
-
-
-
     }
 }

@@ -19,8 +19,7 @@ namespace Pilat.Eshop.Web.Models.Entity
 
         [Required]
         public string Category { get; set; }
-
-
+        
         [Required]
         public double Price { get; set; }
 
@@ -34,5 +33,9 @@ namespace Pilat.Eshop.Web.Models.Entity
         [StringLength(50)]
         public string ImageAlt { get; set; }
 
+        public string Related { get; set; }
+        
+        [NotMapped]
+        public List<string> RelatedList { get; set; }
     }
 }

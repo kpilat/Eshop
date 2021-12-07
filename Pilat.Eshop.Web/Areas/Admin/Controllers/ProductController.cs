@@ -24,10 +24,26 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
             eshopDbContext = eshopDB;
             this.env = env;
         }
+
+        private IList<Product> fillRelatedList()
+        {
+            IList<Product> products = eshopDbContext.Products.ToList();
+            foreach (var product in products)
+            {
+                List<string> pRelated = new List<string>();
+                if (product.Related != null)
+                {
+                    pRelated = product.Related.Split(',').ToList();
+                    pRelated.RemoveAll(item => item == "");
+                    product.RelatedList = pRelated;
+                }
+            }
+            return products;
+        }
         public IActionResult Select()
         {
-            IList<Product> carouselItems = eshopDbContext.Products.ToList();
-            return View(carouselItems);
+            var products = fillRelatedList();
+            return View(products);
         }
         public IActionResult Create()
         {
@@ -35,76 +51,44 @@ namespace Pilat.Eshop.Web.Areas.Admin.Controllers
         }
         public IActionResult Detail(int id)
         {
-            Product pi = eshopDbContext.Products.FirstOrDefault(p => p.ID == id);
-            return View(pi);
-        }
+            var allProducts = fillRelatedList();
+            Product requestedProduct = allProducts.FirstOrDefault(p => p.ID == id);
+            List<Product> relatedProducts = new List<Product>();
+            
+            if (requestedProduct is {RelatedList: { }})
+            {
+                foreach (var item in requestedProduct.RelatedList)
+                {
+                    relatedProducts.AddRange(eshopDbContext.Products.Where(p => p.Category.Equals(item)).ToList());
+                }
+            }
 
-        /*
-        [HttpPost]
-        public IActionResult Create(ProductItem carouselItem)
-        {
-            if (carouselItem != null && carouselItem.Image != null && carouselItem.Name != null/* && carouselItem.Price != null*///)
-        /*{
-            //if (DatabaseFake.CarouselItems != null && DatabaseFake.CarouselItems.Count > 0)
-            {
-                carouselItem.ID = DatabaseFake.CarouselItems.Last().ID + 1;
-            }
-            ProductsFake.CarouselItems.Add(carouselItem);
-            return RedirectToAction(nameof(ProductController.Select));
+            var tuple = new Tuple<Product, List<Product>>(requestedProduct, relatedProducts);
+            return View(tuple);
         }
-        else
+        public async Task<IActionResult> Related([FromQuery(Name = "product-id")] string id, [FromQuery(Name = "related")] string category)
         {
-            return View(carouselItem);
-        }
-    }
-        */
-        /*
-        public IActionResult Edit(int ID)
-        {
-            ProductItem cifromDb = ProductsFake.CarouselItems.FirstOrDefault(ci => ci.ID == ID);
-            if (cifromDb != null)
+            Product product = eshopDbContext.Products.FirstOrDefault(p => p.ID == Int32.Parse(id));
+            List<string> pRelated = new List<string>();
+            if (product.Related != null)
             {
-                return View(cifromDb);
+                pRelated = product.Related.Split(',').ToList();
+                pRelated.RemoveAll(item => item == "");
             }
+
+            if (pRelated.Contains(category))
+                pRelated.Remove(category);
             else
-            {
-                return NotFound();
-            }
+                pRelated.Add(category);
 
-        }*/
-
-        /*
-        [HttpPost]
-        public IActionResult Edit(ProductItem carouselItem)
-        {
-            ProductItem cifromDb = ProductsFake.CarouselItems.FirstOrDefault(ci => ci.ID == carouselItem.ID);
-            if (cifromDb != null)
-            {
-                cifromDb.ImageSource = carouselItem.ImageSource;
-                cifromDb.Name = carouselItem.Name;
-                cifromDb.Price = carouselItem.Price;
-
-                return RedirectToAction(nameof(CarouselController.Select));
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-        */
-
-        /*
-        public IActionResult Delete(int ID)
-        {
-            IList<ProductItem> carouselItems = ProductsFake.CarouselItems;
-            ProductItem ci = carouselItems.Where(CarouselItem => CarouselItem.ID == ID).FirstOrDefault();
-            if (ci != null)
-            {
-                carouselItems.Remove(ci);
-            }
-            //return View();
+            product.RelatedList = pRelated;
+            string toUpload = "";
+            pRelated.ForEach(item => toUpload += item + ",");
+            product.Related = toUpload;
+            await eshopDbContext.SaveChangesAsync();
+            
             return RedirectToAction(nameof(CarouselController.Select));
-        }*/
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create(Product carouselItem)

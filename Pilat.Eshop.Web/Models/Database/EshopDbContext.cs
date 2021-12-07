@@ -24,7 +24,7 @@ namespace Pilat.Eshop.Web.Models.Database
 			modelBuilder.ApplyConfiguration<Order>(new OrderConfiguration());
 			foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {
-				entity.SetTableName(entity.GetTableName().Replace("AspNet", String.Empty));
+				entity.SetTableName(entity.GetTableName().Replace("AspNet", string.Empty));
             }
         }
 	}

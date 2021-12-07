@@ -889,9 +889,7 @@ C:/Users/k_pilat/Documents/Eshop-master/Eshop-master/Pilat.Eshop.Web/obj/Debug/n
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/CreateEditForm.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Delete.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Detail.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Edit 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Edit.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Select 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Select.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Users/Create.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Users/Delete.cshtml.g.cs
@@ -900,13 +898,9 @@ C:/Users/k_pilat/Documents/Eshop-master/Eshop-master/Pilat.Eshop.Web/obj/Debug/n
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Users/Index.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/_ViewImports.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/_ViewStart.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/Account/Login 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/Account/Login.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/Account/Register 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/Account/Register.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/_ViewImports 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/_ViewImports.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/_ViewStart 2.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Security/Views/_ViewStart.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
