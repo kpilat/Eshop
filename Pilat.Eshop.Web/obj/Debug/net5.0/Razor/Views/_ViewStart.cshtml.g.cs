@@ -40,8 +40,22 @@ using Pilat.Eshop.Web.Models.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Views/_ViewImports.cshtml"
+using Pilat.Eshop.Web.Models.Entity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/Views/_ViewImports.cshtml"
+using Pilat.Eshop.Web.Controllers;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f400a24e4f1c1f8dbc87c0f761266a45e781e06b", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a9d190257bcb6a8a03182e54c34049fe97dc2779", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a63c7119cfa96d84bad0cfd75705e866f8f9a175", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

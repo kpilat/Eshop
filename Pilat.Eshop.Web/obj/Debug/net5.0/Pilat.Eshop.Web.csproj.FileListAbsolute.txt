@@ -888,7 +888,6 @@ C:/Users/k_pilat/Documents/Eshop-master/Eshop-master/Pilat.Eshop.Web/obj/Debug/n
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Create.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/CreateEditForm.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Delete.cshtml.g.cs
-/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Detail.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Edit.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Product/Select.cshtml.g.cs
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Areas/Admin/Views/Users/Create.cshtml.g.cs
@@ -914,3 +913,4 @@ C:/Users/k_pilat/Documents/Eshop-master/Eshop-master/Pilat.Eshop.Web/obj/Debug/n
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Pilat.Eshop.Web.Views.pdb
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Pilat.Eshop.Web.genruntimeconfig.cache
 /Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Pilat.Eshop.Web.csproj.CopyComplete
+/Users/kristianpilat/Desktop/ASP.NET CORE/Eshop/Pilat.Eshop.Web/obj/Debug/net5.0/Razor/Views/Product/Detail.cshtml.g.cs
