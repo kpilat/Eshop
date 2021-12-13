@@ -1,0 +1,28 @@
+@model IndexViewModel
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Order Number</th>
+            <th scope="col">Created</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <th scope="row">@order.OrderNumber</th>
+                    <td scope="row">@order.DateTimeCreated</td>
+                    <td scope="row">@order.TotalPrice</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

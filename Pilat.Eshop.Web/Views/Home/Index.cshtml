@@ -169,6 +169,8 @@
                                             <h3 class="mb-0">@product.Name</h3>
                                             <strong class="d-inline-block mt-5 text-primary">@product.Price</strong>
                                         </div>
+                                        <button class="btn">Add To Cart</button>
+                                        <button onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrder", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')"></button>
                                         <div class="col-6 d-none d-lg-block">
                                             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                                                 <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>

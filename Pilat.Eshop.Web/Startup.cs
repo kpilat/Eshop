@@ -59,6 +59,24 @@ namespace Pilat.Eshop.Web
                 options.LogoutPath = "/Security/Account/Logout";
                 options.SlidingExpiration = true;
             });
+            
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+
+            services.AddSession(options =>
+
+            {
+
+                // Set a short timeout for easy testing.
+
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+
+                options.Cookie.HttpOnly = true;
+
+                // Make the session cookie essential
+
+                options.Cookie.IsEssential = true;
+
+            });
 
             services.AddScoped<ISecurityApplicationService, SecurityIdentityApplicationService>();
 
@@ -85,6 +103,9 @@ namespace Pilat.Eshop.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+            
+            app.UseStaticFiles();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

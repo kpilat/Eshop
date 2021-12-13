@@ -11,5 +11,7 @@ namespace Pilat.Eshop.Web.Models.ViewModels
         public IList<CarouselItem> CarouselItems { get; set; }
         public IList<Product> Products { get; set; }
 
+        public IList<Order> Orders { get; set; }
+
     }
 }
