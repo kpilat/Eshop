@@ -6,7 +6,9 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="@Model.Item1.ImageSource" alt="..." /></div>
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0" src="@Model.Item1.ImageSource" alt="..."/>
+            </div>
             <div class="col-md-6">
                 <div class="small mb-1">SKU: BST-498</div>
                 <h1 class="display-5 fw-bolder">@Model.Item1.Name</h1>
@@ -15,7 +17,7 @@
                 </div>
                 <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
+                    <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 3rem"/>
                     <button class="btn btn-outline-dark flex-shrink-0" type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
@@ -28,14 +30,17 @@
             @foreach (var product in Model.Item2)
             {
                 <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                      <img src="@product.ImageSource" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, nihil?</p>
-                        @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
-                      </div>
-                    </div>
+                    <a asp-controller="Product" asp-action="Detail" asp-route-ID="@product.ID">
+
+                        <div class="card" style="width: 18rem;">
+                            <img src="@product.ImageSource" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, nihil?</p>
+                                @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                            </div>
+                        </div>
+                    </a>
                 </div>
             }
 

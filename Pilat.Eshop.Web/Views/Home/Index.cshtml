@@ -153,31 +153,31 @@
 
 <section id="product-section">
     <div class="container">
-    <h1 class="display-6 text-primary">Products</h1>
+        <h1 class="display-6 text-primary my-5">Products</h1>
         @{
             if (Model != null && Model.Products != null && Model.Products.Count > 0)
             {
                 <div class="row">
-        
+
                     @{
                         foreach (var product in Model.Products)
                         {
-                            <div class="col-md-6">
-                                <a asp-controller="Product" asp-action="Detail" asp-route-ID="@product.ID">
-                                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                                        <div class="col-6 p-4 d-flex flex-column position-static">
+                            <div class="col-md-3">
+
+                                <div class="g-0 border rounded overflow-hidden mb-4 shadow-sm h-md-250 position-relative">
+                                    <a asp-controller="Product" asp-action="Detail" asp-route-ID="@product.ID" class="row flex-md-row">
+                                        <div class="col-6 p-4 pb-0 d-flex flex-column position-static">
                                             <h3 class="mb-0">@product.Name</h3>
-                                            <strong class="d-inline-block mt-5 text-primary">@product.Price</strong>
+                                            <strong class="d-inline-block mt-5 text-primary">@product.Price Kč</strong>
                                         </div>
-                                        <button class="btn">Add To Cart</button>
-                                        <button onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrder", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')"></button>
                                         <div class="col-6 d-none d-lg-block">
-                                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                                <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                                            </svg>
+                                            <img src="@product.ImageSource" alt="@product.ImageAlt">
                                         </div>
+                                    </a>
+                                    <div class="col-12 d-none p-4 d-lg-block">
+                                        <button type="button" class="btn btn-primary" onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrders", new {Area = "Customer"})', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')"><i class="bi-cart-fill me-1"></i>Add To Cart</button>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         }
                     }
@@ -186,59 +186,3 @@
         }
     </div>
 </section>
-
-
-
-<div class="row mb-2">
-    <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">World</strong>
-                <h3 class="mb-0">Featured post</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
-                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-@{
-    if (Model != null && Model.Products != null && Model.Products.Count > 0)
-    {
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-
-            </tr>
-            </thead>
-            <tbody>
-
-
-            @{
-                if (Model != null && Model.Products != null)
-                {
-                    for (int i = 0; i < Model.Products.Count; i++)
-                    {
-                        <tr>
-                            <th scope="row">@Model.Products[i].ID</th>
-                            <td>@Model.Products[i].Name</td>
-                            <td>@Model.Products[i].Category</td>
-                        </tr>
-                    }
-                }
-            }
-            </tbody>
-        </table>
-    }
-}
